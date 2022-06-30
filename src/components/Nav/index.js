@@ -30,6 +30,7 @@ function Nav(props) {
                         <span>Contact</span>
                     </li>
                     {categories.map((category)=>(
+                        //this line is to evaluate currentCategory.name === category.name, if true it will return navActive
                         <li className={`mx-1 ${currentCategory.name === category.name && 'navActive'}`} key={category.name}>
                             <span onClick={()=>setCurrentCategory(category)}>
                                 {capitalizeFirstLetter(category.name)}
