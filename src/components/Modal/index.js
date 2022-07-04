@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal({currentPhoto}){
+const Modal= ({onClose, currentPhoto}) => {
     //destructure currentPhoto properties into constraints to assign values into modal
     const {name, category, description, index} = currentPhoto;
 
@@ -10,7 +10,7 @@ function Modal({currentPhoto}){
             <h3 className="modal-title">{name}</h3>
             <img src={require(`../../assets/large/${category}/${index}.jpg`)} alt="currentCategory" />
             <p>{description}</p>
-            <button type="button">
+            <button onClick={onClose} type="button">
                 Close this modal
             </button>
         </div>
